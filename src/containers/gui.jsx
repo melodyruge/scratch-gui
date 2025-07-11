@@ -40,6 +40,7 @@ import cloudManagerHOC from '../lib/cloud-manager-hoc.jsx';
 import systemPreferencesHOC from '../lib/system-preferences-hoc.jsx';
 
 import GUIComponent from '../components/gui/gui.jsx';
+//import TextBox from '../components/text-box/TextBox';
 import {setIsScratchDesktop} from '../lib/isScratchDesktop.js';
 
 const {RequestMetadata, setMetadata, unsetMetadata} = storage.scratchFetch;
@@ -109,6 +110,7 @@ class GUI extends React.Component {
                 {...componentProps}
             >
                 {children}
+                
             </GUIComponent>
         );
     }

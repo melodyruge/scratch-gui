@@ -42,6 +42,9 @@ import costumesIcon from './icon--costumes.svg';
 import soundsIcon from './icon--sounds.svg';
 import DebugModal from '../debug-modal/debug-modal.jsx';
 
+//import TextBox from '../text-box/TextBox';
+import RedBox from '../red-box/RedBox';
+
 const messages = defineMessages({
     addExtension: {
         id: 'gui.gui.addExtension',
@@ -313,6 +316,7 @@ const GUIComponent = props => {
                                 </TabList>
                                 <TabPanel className={tabClassNames.tabPanel}>
                                     <Box className={styles.blocksWrapper}>
+                                        
                                         <Blocks
                                             key={`${blocksId}/${theme}`}
                                             canUseCloud={canUseCloud}
@@ -325,6 +329,9 @@ const GUIComponent = props => {
                                             theme={theme}
                                             vm={vm}
                                         />
+
+                                        <RedBox/>{/* Red box here! */}
+                                        
                                     </Box>
                                     <Box className={styles.extensionButtonContainer}>
                                         <button
@@ -356,13 +363,15 @@ const GUIComponent = props => {
                         </Box>
 
                         <Box className={classNames(styles.stageAndTargetWrapper, styles[stageSize])}>
-                            <StageWrapper
+                            <StageWrapper>
                                 isFullScreen={isFullScreen}
                                 isRendererSupported={isRendererSupported}
                                 isRtl={isRtl}
                                 stageSize={stageSize}
                                 vm={vm}
-                            />
+
+                                {/*<TextBox/>{}*/}
+                            </StageWrapper>
                             <Box className={styles.targetWrapper}>
                                 <TargetPane
                                     stageSize={stageSize}

@@ -1,0 +1,10 @@
+.red-box {
+  position: absolute !important;
+  top: 100px !important;
+  left: 100px !important;
+  width: 200px !important;
+  height: 150px !important;
+  background-color: red;
+  border: 2px solid black;
+  z-index: 9999 !important;
+}
