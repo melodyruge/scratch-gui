@@ -14,6 +14,8 @@
     z-index: $z-index-card;
     margin: 0.5rem 2rem;
     min-width: 468px;
+
+    top: 5%;
 }
 
 .left-card, .right-card {
@@ -304,3 +306,4 @@
 .hidden {
     display: none;
 }
+

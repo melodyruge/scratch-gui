@@ -43,6 +43,12 @@ import GUIComponent from '../components/gui/gui.jsx';
 //import TextBox from '../components/text-box/TextBox';
 import {setIsScratchDesktop} from '../lib/isScratchDesktop.js';
 
+import WelcomeBox from '../components/welcome-box/welcome-box.jsx';
+
+
+import { activateDeck } from '../reducers/cards.js'; 
+
+
 const {RequestMetadata, setMetadata, unsetMetadata} = storage.scratchFetch;
 
 const setProjectIdMetadata = projectId => {
@@ -182,6 +188,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
+    //activateDeck: deckId => dispatch(activateDeck(deckId)),
+
     onExtensionButtonClick: () => dispatch(openExtensionLibrary()),
     onActivateTab: tab => dispatch(activateTab(tab)),
     onActivateCostumesTab: () => dispatch(activateTab(COSTUMES_TAB_INDEX)),

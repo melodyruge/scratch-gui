@@ -341,7 +341,7 @@ const GUIComponent = props => {
 
                                         <RedBox/>{/* Red box here! */}
 
-                                        
+                                        <WelcomeBox/>
 
                                         {/*
                                         <Cards

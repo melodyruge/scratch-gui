@@ -92,6 +92,19 @@ export default {
         steps: [{
             title: (
                 <FormattedMessage
+                    defaultMessage="Welcome to {moveWord}! Let's get started"
+                    description="Step 0 of custom tutorial"
+                    id="gui.howtos.move-sprite.step0"
+                    values = {{
+                        moveWord: (
+                            <span style={{color: '#FFBF00', fontWeight: 'bolder'}}>Stax</span>
+                        )
+                    }}
+                />
+            )
+        },{
+            title: (
+                <FormattedMessage
                     defaultMessage="Drag and drop a {moveWord} block to your code space."
                     description="Step 1 of custom tutorial"
                     id="gui.howtos.move-sprite.step1"
@@ -206,6 +219,19 @@ export default {
                 />
             ),
             image: 'edit-looks-gif' // reference key from image dictionary (see below)
+        }, {
+            title: (
+                <FormattedMessage
+                    defaultMessage="Learn about {moveWord} AI! Go to the AI Tab to learn more"
+                    description="Step 8 of custom tutorial"
+                    id="gui.howtos.move-sprite.step8"
+                    values = {{
+                        moveWord: (
+                            <span style={{color: '#FFBF00', fontWeight: 'bolder'}}>Stax</span>
+                        )
+                    }}
+                />
+            )
         }
     
     ],
