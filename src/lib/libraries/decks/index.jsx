@@ -3,6 +3,11 @@ import {FormattedMessage} from 'react-intl';
 
 // Tutorial thumbnails: Avoid using any text that would need to be
 // translated in thumbnails.
+
+// My custom tutorial
+import myCustomTutorial from './my-custom-tutorial.js';
+
+
 // Intro
 import libraryIntro from './thumbnails/getting-started.jpg';
 
@@ -73,7 +78,139 @@ export const CATEGORIES = {
 };
 
 export default {
-
+    'my-custom-tutorial': {
+        name: (
+            <FormattedMessage
+                defaultMessage="My Custom Tutorial"
+                description="Name for my custom tutorial"
+                id="gui.howtos.my-custom-tutorial.name"
+            />
+        ),
+        tags: ['custom', 'example', 'tutorial'],
+        category: CATEGORIES.gettingStarted,
+        img: null, // You can use an image import like `import myIcon from './images/my-icon.png'`
+        steps: [{
+            title: (
+                <FormattedMessage
+                    defaultMessage="Drag and drop a {moveWord} block to your code space."
+                    description="Step 1 of custom tutorial"
+                    id="gui.howtos.move-sprite.step1"
+                    values = {{
+                        moveWord: (
+                            <span style={{color: '#6CB4EE', fontWeight: 'bolder'}}>move</span>
+                        )
+                    }}
+                />
+            ),
+            image: 'tutorial-move-gif' // reference key from image dictionary (see below)
+        }, {
+            title: (
+                <FormattedMessage
+                    defaultMessage="Click on the {moveWord} block, and the {spriteWord} moves."
+                    description="Step 2 of custom tutorial"
+                    id="gui.howtos.press-move-block.step2"
+                    values = {{
+                        moveWord: (
+                            <span style={{color: '#6CB4EE', fontWeight: 'bolder'}}>move</span>
+                        ),
+                        spriteWord: (
+                            <span style={{color: '#FFBF00', fontWeight: 'bolder'}}>sprite</span>
+                        )
+                    }}
+                />
+            ),
+            image: 'press-move-gif' // reference key from image dictionary (see below)
+        }
+    , {
+            title: (
+                <FormattedMessage
+                    defaultMessage="Let's add another block. Drag a {looksWord} block and connect it to the {moveWord} block."
+                    description="Step 3 of custom tutorial"
+                    id="gui.howtos.add-looks-block.step3"
+                    values = {{
+                        looksWord: (
+                            <span style={{color: '#9966CC', fontWeight: 'bolder'}}>looks</span>
+                        ),
+                        moveWord: (
+                            <span style={{color: '#6CB4EE', fontWeight: 'bolder'}}>move</span>
+                        )
+                    }}
+                />
+            ),
+            image: 'add-looks-gif' // reference key from image dictionary (see below)
+        }, {
+            title: (
+                <FormattedMessage
+                    defaultMessage="Click the blocks. Now the {spriteWord} will {moveWord} and {looksWord}."
+                    description="Step 4 of custom tutorial"
+                    id="gui.howtos.press-looks-block.step4"
+                    values = {{
+                        moveWord: (
+                            <span style={{color: '#6CB4EE', fontWeight: 'bolder'}}>move</span>
+                        ),
+                        spriteWord: (
+                            <span style={{color: '#FFBF00', fontWeight: 'bolder'}}>sprite</span>
+                        ),
+                        looksWord: (
+                            <span style={{color: '#9966CC', fontWeight: 'bolder'}}>say hi for 2 seconds</span>
+                        )
+                    }}
+                />
+            ),
+            image: 'press-looks-gif' // reference key from image dictionary (see below)
+        }, {
+            title: (
+                <FormattedMessage
+                    defaultMessage="Add an {eventWord} block to the previous blocks."
+                    description="Step 5 of custom tutorial"
+                    id="gui.howtos.add-events-block.step5"
+                    values = {{
+                        eventWord: (
+                            <span style={{color: '#FFEF00', fontWeight: 'bolder'}}>event</span>
+                        )
+                    }}
+                />
+            ),
+            image: 'add-events-gif' // reference key from image dictionary (see below)
+        }, {
+            title: (
+                <FormattedMessage
+                    defaultMessage="Press the {blueFlag} block, and the {spriteWord} will play out the blocks."
+                    description="Step 6 of custom tutorial"
+                    id="gui.howtos.press-events-block.step6"
+                    values = {{
+                        blueFlag: (
+                            <span style={{color: '#6CB4EE', fontWeight: 'bolder'}}>blue flag</span>
+                        ),
+                        spriteWord: (
+                            <span style={{color: '#FFBF00', fontWeight: 'bolder'}}>sprite</span>
+                        )
+                    }}
+                />
+            ),
+            image: 'press-events-gif' // reference key from image dictionary (see below)
+        }, {
+            title: (
+                <FormattedMessage
+                    defaultMessage="Edit blocks to customize! (ex. edit {looksWord} block to make the {spriteWord} say 'Bye!'."
+                    description="Step 7 of custom tutorial"
+                    id="gui.howtos.edit-looks-block.step7"
+                    values = {{
+                        looksWord: (
+                            <span style={{color: '#9966CC', fontWeight: 'bolder'}}>looks</span>
+                        ),
+                        spriteWord: (
+                            <span style={{color: '#FFBF00', fontWeight: 'bolder'}}>sprite</span>
+                        )
+                    }}
+                />
+            ),
+            image: 'edit-looks-gif' // reference key from image dictionary (see below)
+        }
+    
+    ],
+        urlId: 'myCustomTutorial'
+    },
     'intro-move-sayhello': {
         name: (
             <FormattedMessage

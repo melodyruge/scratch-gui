@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import omit from 'lodash.omit';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useEffect } from 'react';
 import {defineMessages, FormattedMessage, injectIntl, intlShape} from 'react-intl';
 import {connect} from 'react-redux';
 import MediaQuery from 'react-responsive';
@@ -44,6 +44,12 @@ import DebugModal from '../debug-modal/debug-modal.jsx';
 
 //import TextBox from '../text-box/TextBox';
 import RedBox from '../red-box/RedBox';
+import WelcomeBox from '../welcome-box/welcome-box.jsx'
+
+//import { activateDeck } from '../../reducers/cards.js';
+
+//import React, { useEffect } from 'react';
+
 
 const messages = defineMessages({
     addExtension: {
@@ -58,6 +64,9 @@ const messages = defineMessages({
 let isRendererSupported = null;
 
 const GUIComponent = props => {
+
+
+
     const {
         accountNavOpen,
         activeTabIndex,
@@ -331,6 +340,19 @@ const GUIComponent = props => {
                                         />
 
                                         <RedBox/>{/* Red box here! */}
+
+                                        
+
+                                        {/*
+                                        <Cards
+                                            isVisible={true}
+                                            step={0}
+                                            totalSteps={3}
+                                            onClose={() => {}}
+                                            onNext={() => {}}
+                                            onPrev={() => {}}
+                                        />
+                                        */}
                                         
                                     </Box>
                                     <Box className={styles.extensionButtonContainer}>

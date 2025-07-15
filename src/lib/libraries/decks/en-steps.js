@@ -1,3 +1,12 @@
+//My Tutorial
+import moveSpriteGif from './steps/move-sprite.gif'; // add move block
+import pressMoveBlock from './steps/press-move-block.gif'; // press move block
+import addLooksBlock from './steps/add-looks-block.gif'; // add looks block
+import pressLooksBlock from './steps/press-looks-block.gif'; // press looks block
+import addEventsBlock from './steps/add-events-block.gif'; // add events block
+import pressEventsBlock from './steps/press-events-block.gif'; // press events block
+import editLooksBlock from './steps/edit-looks-block.gif'; // edit looks block
+
 // Intro
 import introMove from './steps/intro-1-move.en.gif';
 import introSay from './steps/intro-2-say.en.gif';
@@ -200,6 +209,17 @@ import talesDanceMoves from './steps/talking-12-dance-moves.en.png';
 import talesAskAnswer from './steps/talking-13-ask-and-answer.en.png';
 
 const enImages = {
+
+    // My Custom Tutorial
+    'tutorial-move-gif': moveSpriteGif,
+    'press-move-gif': pressMoveBlock,
+    'add-looks-gif': addLooksBlock,
+    'press-looks-gif': pressLooksBlock,
+    'add-events-gif': addEventsBlock,
+    'press-events-gif': pressEventsBlock,
+    'edit-looks-gif': editLooksBlock,
+    
+
     // Intro
     introMove: introMove,
     introSay: introSay,

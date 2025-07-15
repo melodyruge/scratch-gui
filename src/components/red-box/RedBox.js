@@ -12,7 +12,7 @@ const RedBox = () => {
 
   const boxStyle = {
     position: 'absolute',
-    top: '150px',
+    top: '300px',
     left: '400px',
     width: '320px',
     height: '330px',
