@@ -44,7 +44,9 @@ import DebugModal from '../debug-modal/debug-modal.jsx';
 
 //import TextBox from '../text-box/TextBox';
 import RedBox from '../red-box/RedBox';
-import WelcomeBox from '../welcome-box/welcome-box.jsx'
+import WelcomeCard from '../tutorial-cards/WelcomeCard.jsx'
+
+import TutorialManager from '../tutorial-cards/TutorialManager.jsx'
 
 //import { activateDeck } from '../../reducers/cards.js';
 
@@ -341,7 +343,8 @@ const GUIComponent = props => {
 
                                         <RedBox/>{/* Red box here! */}
 
-                                        <WelcomeBox/>
+
+                                        <TutorialManager />
 
                                         {/*
                                         <Cards

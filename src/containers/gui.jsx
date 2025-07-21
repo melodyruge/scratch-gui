@@ -43,8 +43,6 @@ import GUIComponent from '../components/gui/gui.jsx';
 //import TextBox from '../components/text-box/TextBox';
 import {setIsScratchDesktop} from '../lib/isScratchDesktop.js';
 
-import WelcomeBox from '../components/welcome-box/welcome-box.jsx';
-
 
 import { activateDeck } from '../reducers/cards.js'; 
 
