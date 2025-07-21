@@ -3,6 +3,7 @@ import WelcomeCard from './WelcomeCard';
 import AiTutorialCard from './AiTutorialCard';
 import ProjectSelectionCard from './ProjectSelectionCard';
 import ChaseGhostTutorial from './ChaseGhostTutorial';
+import PaintProgramTutorial from './PaintProgramTutorial';
 
 const TutorialManager = () => {
     const [step, setStep] = useState(1);
@@ -36,7 +37,11 @@ const TutorialManager = () => {
         }
         if (projectId === 'chase-ghost') {
             setStep(4); // Load your internal multi-step Chase Ghost tutorial
-        } else {
+        } 
+        if (projectId === 'paint-program') {
+            setStep(5); // Load your internal multi-step Paint Program tutorial
+        } 
+        else {
             if (typeof window.startCustomTutorial === 'function') {
                 window.startCustomTutorial(projectId);
             }
@@ -66,6 +71,8 @@ const TutorialManager = () => {
             return <ProjectSelectionCard onSelectProject={handleProjectSelect} onBack={handleBack} />;
         case 4:
             return <ChaseGhostTutorial onBack={handleBack} onExit={handleExit} />;
+        case 5: 
+            return <PaintProgramTutorial on Back={handleBack} onExit={handleExit} />;
         default:
             return null;
     }

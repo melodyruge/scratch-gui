@@ -1,6 +1,6 @@
 import React from 'react';
 import chaseGhostGif from '../gifs/ghost-game-preview.gif';
-import paintProgramGif from '../gifs/to-be-added.gif';
+import paintProgramGif from '../gifs/paint-program-preview.gif';
 import flashcardFunGif from '../gifs/to-be-added.gif';
 
 const ProjectSelectionCard = ({ onSelectProject, onBack }) => {
