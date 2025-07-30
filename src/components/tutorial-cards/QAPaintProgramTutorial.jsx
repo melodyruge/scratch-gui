@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import paintStep3 from '../gifs/paint-program-step3.gif';
-import paintStep4 from '../gifs/paint-program-step4.gif';
-import paintStep5 from '../gifs/paint-program-step5.gif';
-import paintStep8 from '../gifs/paint-program-step8.gif';
+import paintStep2 from '../gifs/QA-paint-program-step2.gif';
+import paintStep3 from '../gifs/QA-paint-program-step3.gif';
+import paintStep4 from '../gifs/QA-paint-program-step4.gif';
+import paintStep5 from '../gifs/QA-paint-program-step5.gif';
+import paintStep6 from '../gifs/QA-paint-program-step6.gif';
+import paintStep7 from '../gifs/QA-paint-program-step7.gif';
 
 const steps = [
     {
@@ -13,27 +15,32 @@ const steps = [
     {
         id: 2,
         text: 'This is an existing paint program project, but there is an error in the code, and the program does not draw.',
+        gif: paintStep2
+    },
+      {
+        id: 3,
+        text: 'Our error is that our pen down block has been replaced with pen up.',
         gif: paintStep3
     },
     {
-        id: 3,
+        id: 4,
         text: 'In this case, we can tell Q&A our problem.',
         gif: paintStep4
     },
         {
-        id: 4,
+        id: 5,
         text: 'Q&A responds in pseudo code and finds the error.',
-        gif: null
-    },
-    {
-      id: 5,
-      text: 'We can go back to the block code and use Q&A\'s pseduo code to fix our error.',
-      gif: paintStep5 
+        gif: paintStep5
     },
     {
       id: 6,
+      text: 'We can go back to the block code and use Q&A\'s pseduo code to fix our error.',
+      gif: paintStep6
+    },
+    {
+      id: 7,
       text: 'Our project now runs smoothly!',
-      gif: paintStep3
+      gif: paintStep7
     }
 ];
 
