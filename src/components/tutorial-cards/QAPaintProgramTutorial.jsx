@@ -1,60 +1,43 @@
 import React, { useState } from 'react';
-import ghostStep2 from '../gifs/ghost-game-preview.gif';
-import ghostStep3 from '../gifs/ghost-game-preview.gif';
-
-import ghostStep6 from '../gifs/ghost-game-step6.gif';
+import paintStep3 from '../gifs/paint-program-step3.gif';
+import paintStep4 from '../gifs/paint-program-step4.gif';
+import paintStep5 from '../gifs/paint-program-step5.gif';
+import paintStep8 from '../gifs/paint-program-step8.gif';
 
 const steps = [
     {
         id: 1,
-        text: 'Let\'s make a ghost game! At the end you can try the prompt too!',
-        gif: 'https://www.creativefabrica.com/wp-content/uploads/2022/07/13/1657690834/Cute-ghost-black-version-580x386.jpg' // Replace with real URLs or local paths
+        text: 'Let\'s learn Stax AI Q&A through a paint program!',
+        gif: 'https://img.freepik.com/free-vector/paint-brushes-color-palette_1308-127912.jpg?semt=ais_hybrid&w=740' // Replace with real URLs or local paths
     },
     {
         id: 2,
-        text: 'This game has two sprites. Go to the sprite library and add the Ghost Sprite',
-        gif: ghostStep2
+        text: 'This is an existing paint program project, but there is an error in the code, and the program does not draw.',
+        gif: paintStep3
     },
     {
         id: 3,
-        text: 'The Code tab lets you use StaxAI to generate simple code. Craft a simple prompt for Sprite1 and hit send.',
-        gif: ghostStep3
+        text: 'In this case, we can tell Q&A our problem.',
+        gif: paintStep4
     },
         {
         id: 4,
-        text: 'Again, craft a simple prompt for Ghost and hit send.',
-        gif: ghostStep3
+        text: 'Q&A responds in pseudo code and finds the error.',
+        gif: null
     },
     {
       id: 5,
-      text: 'Once both are loaded, code blocks are in the work space. Press the flag to play!',
-      gif: ghostStep3 
+      text: 'We can go back to the block code and use Q&A\'s pseduo code to fix our error.',
+      gif: paintStep5 
     },
     {
       id: 6,
-      text: 'Try it yourself: Copy the Sprite1 prompt into your own Code Tab',
-      code: 'reset sprite1 position to center. sprite1 is controlled by arrow keys. show points. every second, add a point. if ghost touches sprite1, stop sprite1',
-      gif: null
-    },
-    {
-      id: 7,
-      text: 'Try it yourself: Copy the Ghost prompt into your own Code Tab',
-      code: 'empty for now',
-      gif: null
-    },
-    {
-      id: 8,
-      text: 'Share your first Stax game! On the top right, click the publish button, and save with your project name.',
-      gif: ghostStep3
-    },
-    {
-      id: 8,
-      text: 'Congrats! You have now made and shared your first game. Use Code tab to create your own game!',
-      gif: ghostStep3
+      text: 'Our project now runs smoothly!',
+      gif: paintStep3
     }
 ];
 
-const ChaseGhostTutorial = ({ onBack, onExit}) => {
+const PaintProgramTutorial = ({ onBack, onExit}) => {
     const [currentStep, setCurrentStep] = useState(0);
 
     const handleNext = () => {
@@ -216,4 +199,4 @@ const ChaseGhostTutorial = ({ onBack, onExit}) => {
     );
 };
 
-export default ChaseGhostTutorial;
+export default PaintProgramTutorial;

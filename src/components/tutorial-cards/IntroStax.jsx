@@ -1,60 +1,63 @@
 import React, { useState } from 'react';
-import ghostStep2 from '../gifs/ghost-game-preview.gif';
-import ghostStep3 from '../gifs/ghost-game-preview.gif';
-
-import ghostStep6 from '../gifs/ghost-game-step6.gif';
+import step2 from '../../lib/libraries/decks/steps/press-move-block.gif';
+import step3 from '../../lib/libraries/decks/steps/press-move-block.gif';
+import step4 from '../../lib/libraries/decks/steps/add-looks-block.gif';
+import step5 from '../../lib/libraries/decks/steps/press-looks-block.gif';
+import step6 from '../../lib/libraries/decks/steps/add-events-block.gif';
+import step7 from '../../lib/libraries/decks/steps/press-events-block.gif';
+import step8 from '../../lib/libraries/decks/steps/edit-looks-block.gif';
+import step9 from '../../lib/libraries/decks/steps/press-move-block.gif';
 
 const steps = [
     {
         id: 1,
-        text: 'Let\'s make a ghost game! At the end you can try the prompt too!',
-        gif: 'https://www.creativefabrica.com/wp-content/uploads/2022/07/13/1657690834/Cute-ghost-black-version-580x386.jpg' // Replace with real URLs or local paths
+        text: 'Welcome To Stax! This is a tutorial for block coding',
+        gif: 'https://pybricks.com/misc/images/home-blocks.svg' // Replace with real URLs or local paths
     },
     {
         id: 2,
-        text: 'This game has two sprites. Go to the sprite library and add the Ghost Sprite',
-        gif: ghostStep2
+        text: 'Drag and drop a move block to your code space.',
+        gif: step2
     },
     {
         id: 3,
-        text: 'The Code tab lets you use StaxAI to generate simple code. Craft a simple prompt for Sprite1 and hit send.',
-        gif: ghostStep3
+        text: 'Click on the move block, and the sprite moves.',
+        gif: step3
     },
         {
         id: 4,
-        text: 'Again, craft a simple prompt for Ghost and hit send.',
-        gif: ghostStep3
+        text: 'Let\'s add another block. Drag a looks block and connect it to the move block.',
+        gif: step4
     },
     {
       id: 5,
-      text: 'Once both are loaded, code blocks are in the work space. Press the flag to play!',
-      gif: ghostStep3 
+      text: 'Click the blocks. Now the sprite will move and say hi for 2 seconds.',
+      gif: step5 
     },
     {
       id: 6,
-      text: 'Try it yourself: Copy the Sprite1 prompt into your own Code Tab',
-      code: 'reset sprite1 position to center. sprite1 is controlled by arrow keys. show points. every second, add a point. if ghost touches sprite1, stop sprite1',
-      gif: null
+      text: 'Add an event block to the previous blocks.',
+      gif: step6
     },
     {
       id: 7,
-      text: 'Try it yourself: Copy the Ghost prompt into your own Code Tab',
-      code: 'empty for now',
-      gif: null
+      text: 'Press the blue flag block, and the sprite will play out the blocks.',
+      gif: step7
     },
     {
       id: 8,
-      text: 'Share your first Stax game! On the top right, click the publish button, and save with your project name.',
-      gif: ghostStep3
+      text: 'Edit blocks to customize! (ex. edit looks block to make the sprite say \'Bye!\').',
+      gif: step8
     },
     {
-      id: 8,
-      text: 'Congrats! You have now made and shared your first game. Use Code tab to create your own game!',
-      gif: ghostStep3
+      id: 9,
+      text: 'Learn about Stax AI! Go to the AI Tab to learn more',
+      isFinal: true // <- new flag
+
     }
 ];
 
-const ChaseGhostTutorial = ({ onBack, onExit}) => {
+const IntroStax = ({ onBack, onExit, onGoToAITutorial}) => {
     const [currentStep, setCurrentStep] = useState(0);
 
     const handleNext = () => {
@@ -155,32 +158,27 @@ const ChaseGhostTutorial = ({ onBack, onExit}) => {
                     ←
                 </button>
 
-{step.code ? (
-    <textarea
-        value={step.code}
-        readOnly
+{step.isFinal ? (
+    <button
+        onClick={onGoToAITutorial}
         style={{
-            width: '90%',
-            height: '120px',
-            padding: '10px',
-            fontSize: '14px',
-            fontFamily: 'monospace',
-            border: '1px solid #ccc',
-            borderRadius: '8px',
-            resize: 'none',
-            backgroundColor: '#f9f9f9'
+            padding: '12px 24px',
+            fontSize: 16,
+            backgroundColor: '#b57bff',
+            color: 'white',
+            border: 'none',
+            borderRadius: 8,
+            cursor: 'pointer',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
         }}
-        onFocus={e => e.target.select()}
-    />
+    >
+        Go to AI Tutorial →
+    </button>
 ) : (
     <img
         src={step.gif}
         alt={`Step ${step.id}`}
-        style={{
-            maxWidth: '100%',
-            maxHeight: '100%',
-            borderRadius: 8
-        }}
+        style={{ maxWidth: '100%', maxHeight: '100%', borderRadius: 8 }}
     />
 )}
 
@@ -216,4 +214,4 @@ const ChaseGhostTutorial = ({ onBack, onExit}) => {
     );
 };
 
-export default ChaseGhostTutorial;
+export default IntroStax;

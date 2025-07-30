@@ -4,20 +4,21 @@ import AiTutorialCard from './AiTutorialCard';
 import ProjectSelectionCard from './ProjectSelectionCard';
 import ChaseGhostTutorial from './ChaseGhostTutorial';
 import PaintProgramTutorial from './PaintProgramTutorial';
+import IntroStax from './IntroStax';
+import QAProjectSelection from './QAProjectSelection';
+import QAPaintProgramTutorial from './QAPaintProgramTutorial';
 
 const TutorialManager = () => {
     const [step, setStep] = useState(1);
     const [selectedLevel, setSelectedLevel] = useState(null);
-    const [visible, setVisible] = useState(true); // optional if you want to hide all tutorial
+    const [visible, setVisible] = useState(true);
 
     const handleSelectLevel = (level) => {
         setSelectedLevel(level);
         if (level === 'moderate' || level === 'frequent') {
-            setStep(2);
-        } else {
-            if (typeof window.startCustomTutorial === 'function') {
-                window.startCustomTutorial('beginner-tutorial');
-            }
+            setStep(2); // Go to AI tutorial
+        } else if (level === 'never' || level === 'couple') {
+            setStep(0); // Go to IntroStax
         }
     };
 
@@ -26,9 +27,7 @@ const TutorialManager = () => {
     };
 
     const startQaTutorial = () => {
-        if (typeof window.startCustomTutorial === 'function') {
-            window.startCustomTutorial('qa-tutorial');
-        }
+        setStep(6);
     };
 
     const handleProjectSelect = (projectId) => {
@@ -36,33 +35,53 @@ const TutorialManager = () => {
             window.startCustomTutorial(projectId);
         }
         if (projectId === 'chase-ghost') {
-            setStep(4); // Load your internal multi-step Chase Ghost tutorial
-        } 
-        if (projectId === 'paint-program') {
-            setStep(5); // Load your internal multi-step Paint Program tutorial
-        } 
-        else {
-            if (typeof window.startCustomTutorial === 'function') {
-                window.startCustomTutorial(projectId);
-            }
+            setStep(4); // Chase Ghost tutorial
+        } else if (projectId === 'paint-program') {
+            setStep(5); // Paint Program tutorial
+        }
+    };
+
+    const handleQaProjectSelect = (projectId) => {
+        if (projectId === 'qa-paint-program') {
+            setStep(7); // QA Paint Project Tutorial
         }
     };
 
     const handleBack = () => {
-        if (step > 1) setStep(step - 1);
+        switch (step) {
+            case 0:
+                setStep(1); // IntroStax -> Welcome
+                break;
+            case 2:
+                setStep(1); // AiTutorialCard -> Welcome
+                break;
+            case 3:
+                setStep(2); // ProjectSelectionCard -> AiTutorialCard
+                break;
+            case 4:
+            case 5:
+                setStep(3); // Game tutorials -> ProjectSelectionCard
+                break;
+            case 6:
+                setStep(2); // QAProjectSelection -> AiTutorialCard
+                break;
+            case 7:
+                setStep(6); // QAPaintProjectTutorial -> QAProjectSelection
+                break;
+            default:
+                break;
+        }
     };
 
-    // <-- ADD THIS FUNCTION -->
     const handleExit = () => {
-        // Example: Hide tutorial entirely or reset step
         setVisible(false);
-        // Or if you want to go back to welcome screen, uncomment below:
-        // setStep(1);
     };
 
-    if (!visible) return null; // hide tutorial if exited
+    if (!visible) return null;
 
     switch (step) {
+        case 0:
+            return <IntroStax onBack={handleBack} onExit={handleExit} onGoToAITutorial={() => setStep(2)} />;
         case 1:
             return <WelcomeCard selectedLevel={selectedLevel} onSelectLevel={handleSelectLevel} />;
         case 2:
@@ -71,8 +90,18 @@ const TutorialManager = () => {
             return <ProjectSelectionCard onSelectProject={handleProjectSelect} onBack={handleBack} />;
         case 4:
             return <ChaseGhostTutorial onBack={handleBack} onExit={handleExit} />;
-        case 5: 
-            return <PaintProgramTutorial on Back={handleBack} onExit={handleExit} />;
+        case 5:
+            return <PaintProgramTutorial onBack={handleBack} onExit={handleExit} />;
+        case 6:
+            return (
+                <QAProjectSelection
+                    onBack={handleBack}
+                    onExit={handleExit}
+                    onSelectProject={handleQaProjectSelect}
+                />
+            );
+        case 7:
+            return <QAPaintProgramTutorial onBack={handleBack} onExit={handleExit} />;
         default:
             return null;
     }

@@ -340,11 +340,10 @@ const GUIComponent = props => {
                                             theme={theme}
                                             vm={vm}
                                         />
-
-                                        <RedBox/>{/* Red box here! */}
-
-
+                                        
                                         <TutorialManager />
+                                        
+                                        <RedBox/>{/* Red box here! */}
 
                                         {/*
                                         <Cards

@@ -23,7 +23,8 @@ const steps = [
         {
         id: 4,
         text: 'Try it yourself: Copy the prompt into your own Code Tab:',
-        gif: paintStep8
+        code: 'Move sprite1 with arrow keys. if space is pressed, pen down. if x is pressed, pen up. if c is pressed, change pen color by 10. if 1 is pressed, set pen size to 1. if 2 is pressed, set pen size to 2. if 3 is pressed, set pen size to 3, and so on until 9',
+        gif: null
     },
     {
       id: 5,
@@ -138,7 +139,35 @@ const PaintProgramTutorial = ({ onBack, onExit}) => {
                     ←
                 </button>
 
-                <img src={step.gif} alt={`Step ${step.id}`} style={{ maxWidth: '100%', maxHeight: '100%', borderRadius: 8 }} />
+{step.code ? (
+    <textarea
+        value={step.code}
+        readOnly
+        style={{
+            width: '90%',
+            height: '120px',
+            padding: '10px',
+            fontSize: '14px',
+            fontFamily: 'monospace',
+            border: '1px solid #ccc',
+            borderRadius: '8px',
+            resize: 'none',
+            backgroundColor: '#f9f9f9'
+        }}
+        onFocus={e => e.target.select()}
+    />
+) : (
+    <img
+        src={step.gif}
+        alt={`Step ${step.id}`}
+        style={{
+            maxWidth: '100%',
+            maxHeight: '100%',
+            borderRadius: 8
+        }}
+    />
+)}
+
 
                 <button
                     onClick={handleNext}

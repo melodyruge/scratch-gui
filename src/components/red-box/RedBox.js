@@ -20,7 +20,7 @@ const RedBox = () => {
     backgroundColor: 'white',
     padding: '10px',
     boxSizing: 'border-box',
-    zIndex: 10000,
+    zIndex: 0, // change to 1000 if you want to appear, right now this way to let tutorial appear over it 
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
