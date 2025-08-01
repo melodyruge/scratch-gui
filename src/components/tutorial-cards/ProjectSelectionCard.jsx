@@ -1,13 +1,13 @@
 import React from 'react';
-import chaseGhostGif from '../gifs/ghost-game-preview.gif';
+import chaseGhostGif from '../gifs/cookie-clicker-step3.gif';
 import paintProgramGif from '../gifs/paint-program-preview.gif';
-import flashcardFunGif from '../gifs/to-be-added.gif';
+import flashcardFunGif from '../gifs/quick-quiz-step3.gif';
 
 const ProjectSelectionCard = ({ onSelectProject, onBack }) => {
     const projects = [
-        { id: 'chase-ghost', label: 'Chase Ghost', gif: chaseGhostGif },
+        { id: 'chase-ghost', label: 'Competitive Clicker', gif: chaseGhostGif },
         { id: 'paint-program', label: 'Paint Program', gif: paintProgramGif },
-        { id: 'flashcard-fun', label: 'Flashcard Fun', gif: flashcardFunGif }
+        { id: 'quick-quiz', label: 'Quick Quiz', gif: flashcardFunGif }
     ];
 
     const completedProjects = ['chase-ghost']; // Hardcoded for now
@@ -27,6 +27,68 @@ const ProjectSelectionCard = ({ onSelectProject, onBack }) => {
             boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
             textAlign: 'center'
         }}>
+
+            {/* Purple Header */}
+            {/* Purple Header with title, progress, and buttons */}
+<div style={{
+    backgroundColor: '#b57bff',
+    color: 'white',
+    padding: '10px 16px',
+    borderTopLeftRadius: 14,
+    borderTopRightRadius: 14,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    margin: '-24px -32px 16px -32px' // overlaps padding
+}}>
+            {/* Back button at bottom */}
+            <button onClick={onBack} style={{
+                backgroundColor: 'white',
+                color: '#b57bff',
+                border: 'none',
+                borderRadius: 8,
+                fontSize: 16,
+                cursor: 'pointer'
+            }}>
+                Back
+            </button>
+
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+        <button
+            onClick={() => alert('Shrink not implemented')}
+            style={{
+                fontSize: 12,
+                marginRight: 10,
+                background: 'transparent',
+                border: 'none',
+                color: 'white',
+                cursor: 'pointer',
+                fontWeight: 'bold'
+            }}
+        >
+            Shrink
+        </button>
+        <button
+            //onClick={onExit}
+            //aria-label="Exit tutorial"
+            style={{
+                background: 'transparent',
+                border: 'none',
+                fontSize: 20,
+                fontWeight: 'bold',
+                color: 'white',
+                cursor: 'pointer',
+                width: 32,
+                height: 32,
+                borderRadius: 16,
+                lineHeight: '32px',
+                textAlign: 'center'
+            }}
+        >
+            ×
+        </button>
+    </div>
+</div>
             <h2 style={{ color: '#b57bff', marginBottom: 20 }}>
                 What project would you like to generate?
             </h2>
@@ -104,20 +166,6 @@ const ProjectSelectionCard = ({ onSelectProject, onBack }) => {
                 })}
             </div>
 
-            <button
-                onClick={onBack}
-                style={{
-                    backgroundColor: '#b57bff',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: 8,
-                    padding: '10px 16px',
-                    fontSize: 16,
-                    cursor: 'pointer'
-                }}
-            >
-                Back
-            </button>
         </div>
     );
 };

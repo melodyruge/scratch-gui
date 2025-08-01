@@ -2,10 +2,8 @@ import React from 'react';
 
 const WelcomeCard = ({ selectedLevel, onSelectLevel }) => {
     const options = [
-        { id: 'never', label: 'Never used\nScratch', color: '#FFA500' },
-        { id: 'couple', label: 'Used Scratch\nonce or twice', color: '#FFEB3B' },
-        { id: 'moderate', label: 'Used Scratch\nsometimes', color: '#00BCD4' },
-        { id: 'frequent', label: 'Used Scratch\na lot', color: '#9C27B0' }
+        { id: 'never', label: 'No', color: '#FFA500' },
+        {  id: 'frequent', label: 'Yes', color: '#9C27B0' }
     ];
 
     return (
@@ -25,7 +23,7 @@ const WelcomeCard = ({ selectedLevel, onSelectLevel }) => {
         }}>
             <h2 style={{ color: '#b57bff', marginBottom: 10 }}>Welcome to Stax!</h2>
             <p style={{ fontSize: 18, marginBottom: 30 }}>
-                What is your experience with block-coding platforms (like Scratch)?
+                Have you used Scratch before?
             </p>
 
             <div style={{

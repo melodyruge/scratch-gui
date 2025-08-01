@@ -4,9 +4,17 @@ import AiTutorialCard from './AiTutorialCard';
 import ProjectSelectionCard from './ProjectSelectionCard';
 import ChaseGhostTutorial from './ChaseGhostTutorial';
 import PaintProgramTutorial from './PaintProgramTutorial';
+import QuickQuizTutorial from './QuickQuizTutorial';
+
 import IntroStax from './IntroStax';
+
 import QAProjectSelection from './QAProjectSelection';
+
 import QAPaintProgramTutorial from './QAPaintProgramTutorial';
+import QARoastProjectTutorial from './QARoastProjectTutorial';
+import QAImproveProjectTutorial from './QAImproveProjectTutorial';
+import QAExploreProjectTutorial from './QAExploreProjectTutorial';
+
 
 const TutorialManager = () => {
     const [step, setStep] = useState(1);
@@ -38,12 +46,23 @@ const TutorialManager = () => {
             setStep(4); // Chase Ghost tutorial
         } else if (projectId === 'paint-program') {
             setStep(5); // Paint Program tutorial
+        } else if (projectId === 'quick-quiz') {
+            setStep(8);
         }
     };
 
     const handleQaProjectSelect = (projectId) => {
         if (projectId === 'qa-paint-program') {
             setStep(7); // QA Paint Project Tutorial
+        }
+        if (projectId === 'qa-roast-project') {
+            setStep(9);
+        }
+      if (projectId === 'qa-improve-project') {
+            setStep(10);
+        }
+      if (projectId === 'qa-explore-project') {
+            setStep(11);
         }
     };
 
@@ -68,6 +87,15 @@ const TutorialManager = () => {
             case 7:
                 setStep(6); // QAPaintProjectTutorial -> QAProjectSelection
                 break;
+            case 8:
+                setStep(3);
+                break;
+            case 9:
+                setStep(6);
+            case 10:
+                setStep(6);
+            case 11:
+                setStep(6);
             default:
                 break;
         }
@@ -102,6 +130,14 @@ const TutorialManager = () => {
             );
         case 7:
             return <QAPaintProgramTutorial onBack={handleBack} onExit={handleExit} />;
+        case 8:
+            return <QuickQuizTutorial onBack={handleBack} onExit={handleExit} />;
+        case 9:
+            return <QARoastProjectTutorial onBack={handleBack} onExit={handleExit} />;
+        case 10:
+            return <QAImproveProjectTutorial onBack={handleBack} onExit={handleExit} />;
+        case 11:
+            return <QAExploreProjectTutorial onBack={handleBack} onExit={handleExit} />;
         default:
             return null;
     }

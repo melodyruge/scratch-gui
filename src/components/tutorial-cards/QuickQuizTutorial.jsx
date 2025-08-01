@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
 import paintStep3 from '../gifs/paint-program-step3.gif';
+import quizStep2 from '../gifs/quick-quiz-step2.gif';
+import quizStep3 from '../gifs/quick-quiz-step3.gif';
 import paintStep4 from '../gifs/paint-program-step4.gif';
 import paintStep5 from '../gifs/paint-program-step5.gif';
 
 const steps = [
     {
         id: 1,
-        text: "Let's make a paint program! At the end you can try the prompt too!",
-        gif: 'https://img.freepik.com/free-vector/paint-brushes-color-palette_1308-127912.jpg?semt=ais_hybrid&w=740'
+        text: "Let's make a quick quiz! At the end you can try the prompt too!",
+        gif: 'https://png.pngtree.com/png-vector/20220520/ourmid/pngtree-comic-speech-bubbles-with-text-quiz-png-image_4667086.png'
     },
     {
         id: 2,
         text: 'The Code tab lets you use Stax AI to generate simple code. Craft a simple prompt and hit send:',
-        gif: paintStep3
+        gif: quizStep2
     },
     {
         id: 3,
         text: 'Once loaded, code blocks are in the workspace. Press the flag to play!',
-        gif: paintStep4
+        gif: quizStep3
     },
     {
         id: 4,
@@ -27,12 +29,12 @@ const steps = [
   {
         id: 5,
         text: 'Try it yourself: Copy the prompt into your own Code Tab:',
-        code: 'Move sprite1 with arrow keys. if space is pressed, pen down. if x is pressed, pen up. if c is pressed, change pen color by 10. if 1 is pressed, set pen size to 1. if 2 is pressed, set pen size to 2. if 3 is pressed, set pen size to 3, and so on until 9',
+        code: 'Create a math quiz with 3 questions. If user gets all questions right, have a crazy dance party.',
         gif: null
     }
 ];
 
-const PaintProgramTutorial = ({ onBack, onExit }) => {
+const QuickQuizTutorial = ({ onBack, onExit }) => {
     const [currentStep, setCurrentStep] = useState(0);
 
     const [copied, setCopied] = useState(false);
@@ -256,4 +258,4 @@ const PaintProgramTutorial = ({ onBack, onExit }) => {
     );
 };
 
-export default PaintProgramTutorial;
+export default QuickQuizTutorial;

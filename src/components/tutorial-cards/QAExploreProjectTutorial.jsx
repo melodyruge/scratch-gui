@@ -1,38 +1,41 @@
 import React, { useState } from 'react';
-import paintStep3 from '../gifs/paint-program-step3.gif';
-import paintStep4 from '../gifs/paint-program-step4.gif';
-import paintStep5 from '../gifs/paint-program-step5.gif';
+import paintStep2 from '../gifs/explore-project-step2.gif';
+import paintStep3 from '../gifs/explore-project-step3.gif';
+import paintStep4 from '../gifs/explore-project-step4.gif';
+import paintStep5 from '../gifs/QA-paint-program-step5.gif';
+import paintStep6 from '../gifs/QA-paint-program-step6.gif';
+import paintStep7 from '../gifs/QA-paint-program-step7.gif';
 
 const steps = [
     {
         id: 1,
-        text: "Let's make a paint program! At the end you can try the prompt too!",
-        gif: 'https://img.freepik.com/free-vector/paint-brushes-color-palette_1308-127912.jpg?semt=ais_hybrid&w=740'
+        text: 'Let\'s learn how to explore projects with Stax AI Q&A!',
+        gif: 'https://www.freeiconspng.com/uploads/find-icon-7.png' // Replace with real URLs or local paths
     },
     {
         id: 2,
-        text: 'The Code tab lets you use Stax AI to generate simple code. Craft a simple prompt and hit send:',
-        gif: paintStep3
+        text: 'We are going ask Stax explore this project:',
+        gif: paintStep2
     },
     {
         id: 3,
-        text: 'Once loaded, code blocks are in the workspace. Press the flag to play!',
-        gif: paintStep4
+        text: 'Ask Q&A how this project was made.',
+        gif: paintStep3
     },
     {
         id: 4,
-        text: 'Share your first Stax game! On the top right, click the publish button, and save with your project name.',
-        gif: paintStep5
+        text: 'StaxAI shows how the game was made. Now we can make our own game using this info!',
+        gif: paintStep4
     },
-  {
+      {
         id: 5,
-        text: 'Try it yourself: Copy the prompt into your own Code Tab:',
-        code: 'Move sprite1 with arrow keys. if space is pressed, pen down. if x is pressed, pen up. if c is pressed, change pen color by 10. if 1 is pressed, set pen size to 1. if 2 is pressed, set pen size to 2. if 3 is pressed, set pen size to 3, and so on until 9',
+        text: 'Try it yourself: Go to this project and ask Stax Q&A how it was made:',
+        code: 'https://stax.fun/editor?projectId=1000',
         gif: null
     }
 ];
 
-const PaintProgramTutorial = ({ onBack, onExit }) => {
+const QAExploreProjectTutorial = ({ onBack, onExit}) => {
     const [currentStep, setCurrentStep] = useState(0);
 
     const [copied, setCopied] = useState(false);
@@ -256,4 +259,4 @@ const PaintProgramTutorial = ({ onBack, onExit }) => {
     );
 };
 
-export default PaintProgramTutorial;
+export default QAExploreProjectTutorial;
