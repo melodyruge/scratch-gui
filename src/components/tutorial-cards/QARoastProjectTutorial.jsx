@@ -195,7 +195,7 @@ const QARoastProjectTutorial = ({ onBack, onExit}) => {
                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
             }}
         >
-            🔗 Open Project
+            🔗 Help me Import and Roast this Project
         </a>
     </div>
 ) : (

@@ -189,7 +189,7 @@ const QAImproveProjectTutorial = ({ onBack, onExit}) => {
                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
             }}
         >
-            🔗 Open Project
+            🔗 Help me Improve this Project
         </a>
     </div>
 ) : (
