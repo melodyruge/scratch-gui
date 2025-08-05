@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import paintStep3 from '../gifs/paint-program-step3.gif';
-import paintStep4 from '../gifs/paint-program-step4.gif';
-import paintStep5 from '../gifs/paint-program-step5.gif';
+import paintStep3 from '../gifs/paint-program-step2.gif';
+import paintStep4 from '../gifs/paint-program-step3.gif';
+import paintStep5 from '../gifs/publish-game.gif';
 
 const steps = [
     {
@@ -16,17 +16,17 @@ const steps = [
     },
     {
         id: 3,
-        text: 'Once loaded, code blocks are in the workspace. Press the flag to play!',
+        text: 'Once loaded, code blocks are generated in the workspace. Press the flag to play!',
         gif: paintStep4
     },
     {
         id: 4,
-        text: 'Share your first Stax game! On the top right, click the publish button, and save with your project name.',
+        text: 'Share your first Stax game! On the headbar, click save and name your project, then click publish for others to play.',
         gif: paintStep5
     },
   {
         id: 5,
-        text: 'Try it yourself: Copy the prompt into your own Code Tab:',
+        text: 'Try it yourself: Copy the prompt into your own Code Tab.',
         code: 'Move sprite1 with arrow keys. if space is pressed, pen down. if x is pressed, pen up. if c is pressed, change pen color by 10. if 1 is pressed, set pen size to 1. if 2 is pressed, set pen size to 2. if 3 is pressed, set pen size to 3, and so on until 9',
         gif: null
     }

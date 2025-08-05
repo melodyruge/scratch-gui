@@ -1,8 +1,8 @@
 import React from 'react'; 
-import chaseGhostGif from '../gifs/improve-project-step2.gif';
-import paintProgramGif from '../gifs/paint-program-preview.gif';
-import flashcardFunGif from '../gifs/explore-project-step2.gif';
-import importGif from '../gifs/roast-project-step4.gif'; // Add your own image here
+import chaseGhostGif from '../gifs/improve-project-preview.gif';
+import paintProgramGif from '../gifs/debug-project-preview.gif';
+import flashcardFunGif from '../gifs/explore-project-preview.gif';
+import importGif from '../gifs/roast-project-preview.gif'; // Add your own image here
 
 const QAProjectSelection = ({ onSelectProject, onBack }) => {
     const projects = [
@@ -91,7 +91,7 @@ const QAProjectSelection = ({ onSelectProject, onBack }) => {
     </div>
 </div>
             <h2 style={{ color: '#b57bff', marginBottom: 20 }}>
-                What Q&A actions would you like to learn?
+                Learn how to get Stax AI to answer questions about your project
             </h2>
 
             <div style={{

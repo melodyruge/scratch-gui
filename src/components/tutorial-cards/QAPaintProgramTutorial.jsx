@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import paintStep2 from '../gifs/QA-paint-program-step2.gif';
-import paintStep3 from '../gifs/QA-paint-program-step3.gif';
-import paintStep4 from '../gifs/QA-paint-program-step4.gif';
-import paintStep5 from '../gifs/QA-paint-program-step5.gif';
-import paintStep6 from '../gifs/QA-paint-program-step6.gif';
-import paintStep7 from '../gifs/QA-paint-program-step7.gif';
+import paintStep2 from '../gifs/debug-project-step2.gif';
+import paintStep4 from '../gifs/debug-project-step3.gif';
+import paintStep5 from '../gifs/debug-project-step4.gif';
+import paintStep3 from '../gifs/debug-project-step5.gif';
+import paintStep6 from '../gifs/debug-project-step6.gif';
+import paintStep7 from '../gifs/debug-project-step7.gif';
+
 
 const steps = [
     {
@@ -19,7 +20,7 @@ const steps = [
     },
     {
         id: 3,
-        text: 'In this case, we can tell Q&A our problem.',
+        text: 'We can ask Q&A why our code is not working.',
         gif: paintStep4
     },
     {
@@ -29,7 +30,7 @@ const steps = [
     },
       {
         id: 5,
-        text: 'We find our error is that our pen down block has been replaced with pen up.',
+        text: 'Our error: the pen down block has been replaced with the pen up block.',
         gif: paintStep3
     },
     {
@@ -190,62 +191,38 @@ const PaintProgramTutorial = ({ onBack, onExit}) => {
 
                 {/* Center Content */}
                 {step.code ? (
-<div style={{ width: '90%', position: 'relative' }}>
-    <textarea
-        value={step.code}
-        readOnly
-        style={{
-            width: '100%',
-            height: '100px',
-            padding: '10px',
-            fontSize: '14px',
-            fontFamily: 'monospace',
-            border: '1px solid #ccc',
-            borderRadius: '8px',
-            resize: 'none',
-            backgroundColor: '#f9f9f9'
-        }}
-        onFocus={e => e.target.select()}
-    />
-    <div style={{
-        display: 'flex',
-        justifyContent: 'flex-end',
-        marginTop: '8px'
-    }}>
-        <button
-            onClick={() => {
-                navigator.clipboard.writeText(step.code);
-                setCopied(true);
-                setTimeout(() => setCopied(false), 1500);
-            }}
+    <div style={{ textAlign: 'center' }}>
+        <a
+            href={step.code}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-                padding: '6px 12px',
-                fontSize: 12,
+                display: 'inline-block',
+                padding: '10px 16px',
                 backgroundColor: '#b57bff',
                 color: 'white',
-                border: 'none',
-                borderRadius: 6,
-                cursor: 'pointer',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.2)'
+                borderRadius: '8px',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+                fontSize: '14px',
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
             }}
         >
-            {copied ? '✔ Copied!' : '📋 Copy'}
-        </button>
+            🔗 Open Project
+        </a>
     </div>
-</div>
+) : (
+    <img
+        src={step.gif}
+        alt={`Step ${step.id}`}
+        style={{
+            maxWidth: '90%',
+            maxHeight: '90%',
+            borderRadius: 8
+        }}
+    />
+)}
 
-
-                ) : (
-                    <img
-                        src={step.gif}
-                        alt={`Step ${step.id}`}
-                        style={{
-                            maxWidth: '90%',
-                            maxHeight: '90%',
-                            borderRadius: 8
-                        }}
-                    />
-                )}
 
                 {/* Right Arrow */}
                 <button

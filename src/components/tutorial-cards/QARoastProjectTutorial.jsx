@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import paintStep2 from '../gifs/roast-project-step2.gif';
-import paintStep3 from '../gifs/roast-project-step3.gif';
-import paintStep4 from '../gifs/roast-project-step4.gif';
-import paintStep5 from '../gifs/QA-paint-program-step5.gif';
-import paintStep6 from '../gifs/QA-paint-program-step6.gif';
-import paintStep7 from '../gifs/QA-paint-program-step7.gif';
+import paintStep1 from '../gifs/roast-project-step2.gif';
+import paintStep2 from '../gifs/roast-project-step3.gif';
+import paintStep3 from '../gifs/roast-project-step4.gif';
+import paintStep4 from '../gifs/roast-project-step5.gif';
 
 const steps = [
     {
@@ -14,21 +12,26 @@ const steps = [
     },
     {
         id: 2,
-        text: 'Go to your scratch project and paste the link in Stax import area.',
-        gif: paintStep2
+        text: 'This is the project we will be importing and roasting:',
+        gif: paintStep1
     },
     {
         id: 3,
-        text: 'Ask Q&A to brutally roast the project.',
-        gif: paintStep3
+        text: 'Go to your Scratch project and paste the project link in Stax import text box.',
+        gif: paintStep2
     },
     {
         id: 4,
+        text: 'Once the project is imported, ask Q&A to brutally roast the project.',
+        gif: paintStep3
+    },
+    {
+        id: 5,
         text: 'Brutal roast by StaxAI!',
         gif: paintStep4
     },
       {
-        id: 5,
+        id: 6,
         text: 'Try it yourself: Import this project and ask Stax Q&A to roast it!',
         code: 'https://scratch.mit.edu/projects/1203184409',
         gif: null
@@ -175,62 +178,38 @@ const QARoastProjectTutorial = ({ onBack, onExit}) => {
 
                 {/* Center Content */}
                 {step.code ? (
-<div style={{ width: '90%', position: 'relative' }}>
-    <textarea
-        value={step.code}
-        readOnly
-        style={{
-            width: '100%',
-            height: '100px',
-            padding: '10px',
-            fontSize: '14px',
-            fontFamily: 'monospace',
-            border: '1px solid #ccc',
-            borderRadius: '8px',
-            resize: 'none',
-            backgroundColor: '#f9f9f9'
-        }}
-        onFocus={e => e.target.select()}
-    />
-    <div style={{
-        display: 'flex',
-        justifyContent: 'flex-end',
-        marginTop: '8px'
-    }}>
-        <button
-            onClick={() => {
-                navigator.clipboard.writeText(step.code);
-                setCopied(true);
-                setTimeout(() => setCopied(false), 1500);
-            }}
+    <div style={{ textAlign: 'center' }}>
+        <a
+            href={step.code}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-                padding: '6px 12px',
-                fontSize: 12,
+                display: 'inline-block',
+                padding: '10px 16px',
                 backgroundColor: '#b57bff',
                 color: 'white',
-                border: 'none',
-                borderRadius: 6,
-                cursor: 'pointer',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.2)'
+                borderRadius: '8px',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+                fontSize: '14px',
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
             }}
         >
-            {copied ? '✔ Copied!' : '📋 Copy'}
-        </button>
+            🔗 Open Project
+        </a>
     </div>
-</div>
+) : (
+    <img
+        src={step.gif}
+        alt={`Step ${step.id}`}
+        style={{
+            maxWidth: '90%',
+            maxHeight: '90%',
+            borderRadius: 8
+        }}
+    />
+)}
 
-
-                ) : (
-                    <img
-                        src={step.gif}
-                        alt={`Step ${step.id}`}
-                        style={{
-                            maxWidth: '90%',
-                            maxHeight: '90%',
-                            borderRadius: 8
-                        }}
-                    />
-                )}
 
                 {/* Right Arrow */}
                 <button

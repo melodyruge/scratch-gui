@@ -1,11 +1,6 @@
 import React from 'react';
 
-const WelcomeCard = ({ selectedLevel, onSelectLevel }) => {
-    const options = [
-        { id: 'never', label: 'No', color: '#FFA500' },
-        {  id: 'frequent', label: 'Yes', color: '#9C27B0' }
-    ];
-
+const WelcomeCard = ({ onSelectLevel, onShrink, onExit }) => {
     return (
         <div style={{
             position: 'absolute',
@@ -14,101 +9,121 @@ const WelcomeCard = ({ selectedLevel, onSelectLevel }) => {
             backgroundColor: 'white',
             border: '2px solid #ccc',
             borderRadius: 16,
-            padding: '24px 32px',
-            width: 500,
+            width: 540,
             zIndex: 1000,
             fontFamily: 'Arial, sans-serif',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-            textAlign: 'center'
+            boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
         }}>
-            <h2 style={{ color: '#b57bff', marginBottom: 10 }}>Welcome to Stax!</h2>
-            <p style={{ fontSize: 18, marginBottom: 30 }}>
-                Have you used Scratch before?
-            </p>
-
+            {/* Purple Header with Shrink and Exit */}
             <div style={{
+                backgroundColor: '#b57bff',
+                color: 'white',
+                padding: '10px 16px',
+                borderTopLeftRadius: 14,
+                borderTopRightRadius: 14,
                 display: 'flex',
-                flexDirection: 'column',
+                justifyContent: 'space-between',
                 alignItems: 'center',
-                position: 'relative',
-                height: 130,
-                marginBottom: 10
+                height: 48
             }}>
-                {/* Black line */}
-                <div style={{
-                    position: 'absolute',
-                    top: 30,
-                    left: '10%',
-                    right: '10%',
-                    height: 8,
-                    backgroundColor: '#444',
-                    borderRadius: 4,
-                    zIndex: 0
-                }} />
+                <button
+                    onClick={() => alert('Back not implemented')}
+                    style={{
+                        background: 'transparent',
+                        border: 'none',
+                        color: 'white',
+                        fontWeight: 'bold',
+                        fontSize: 14,
+                        cursor: 'pointer'
+                    }}
+                >
+                     
+                </button>
 
-                {/* Circles */}
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    width: '100%',
-                    padding: '0 20px',
-                    zIndex: 1
-                }}>
-                    {options.map(({ id, label, color }) => (
-                        <div key={id} style={{ textAlign: 'center' }}>
-                            <button
-                                onClick={() => onSelectLevel(id)}
-                                style={{
-                                    width: 60,
-                                    height: 60,
-                                    borderRadius: '50%',
-                                    border: `6px solid ${color}`,
-                                    backgroundColor: 'white',
-                                    cursor: 'pointer',
-                                    transition: 'all 0.3s ease',
-                                    fontSize: 24,
-                                    color: selectedLevel === id ? color : 'transparent',
-                                    fontWeight: 'bold',
-                                }}
-                                onMouseEnter={(e) => {
-                                    if (selectedLevel !== id) {
-                                        e.currentTarget.innerText = '✔';
-                                        e.currentTarget.style.color = color;
-                                    }
-                                }}
-                                onMouseLeave={(e) => {
-                                    if (selectedLevel !== id) {
-                                        e.currentTarget.innerText = '';
-                                        e.currentTarget.style.color = 'transparent';
-                                    }
-                                }}
-                            >
-                                {selectedLevel === id ? '✔' : ''}
-                            </button>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Labels */}
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    width: '100%',
-                    padding: '0 20px',
-                    marginTop: 8
-                }}>
-                    {options.map(({ id, label, color }) => (
-                        <div key={id} style={{
-                            textAlign: 'center',
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <button
+                        onClick={onShrink}
+                        style={{
                             fontSize: 12,
-                            fontWeight: 500,
-                            color,
-                            whiteSpace: 'pre-wrap',
-                            width: 60
-                        }}>
-                            {label}
-                        </div>
-                    ))}
+                            marginRight: 10,
+                            background: 'transparent',
+                            border: 'none',
+                            color: 'white',
+                            cursor: 'pointer',
+                            fontWeight: 'bold'
+                        }}
+                    >
+                        Shrink
+                    </button>
+                    <button
+                        onClick={onExit}
+                        aria-label="Exit tutorial"
+                        style={{
+                            background: 'transparent',
+                            border: 'none',
+                            fontSize: 20,
+                            fontWeight: 'bold',
+                            color: 'white',
+                            cursor: 'pointer',
+                            width: 32,
+                            height: 32,
+                            borderRadius: 16,
+                            lineHeight: '32px',
+                            textAlign: 'center'
+                        }}
+                    >
+                        ×
+                    </button>
+                </div>
+            </div>
+
+            {/* Main Content */}
+            <div style={{
+                padding: '32px 24px',
+                textAlign: 'center'
+            }}>
+                <p style ={{ fontSize: 30, color: '#b57bff', paddingTop: 0, marginTop: 0, fontWeight: 'bold', marginBottom: 30}}>
+                    Welcome to Stax!
+                </p>
+                <p style={{ fontSize: 20, color: '#464646ff', fontWeight: 'bold', marginBottom: 30 }}>
+                    Have you used Scratch before?
+                </p>
+
+                <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-around'
+                }}>
+                    <button
+                        onClick={() => onSelectLevel('never')}
+                        style={{
+                            padding: '16px 32px',
+                            fontSize: '16px',
+                            backgroundColor: '#ff9900',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '8px',
+                            cursor: 'pointer',
+                            fontWeight: 'bold'
+                        }}
+                    >
+                        No
+                    </button>
+
+                    <button
+                        onClick={() => onSelectLevel('frequent')}
+                        style={{
+                            padding: '16px 32px',
+                            fontSize: '16px',
+                            backgroundColor: '#b57bff',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '8px',
+                            cursor: 'pointer',
+                            fontWeight: 'bold'
+                        }}
+                    >
+                        Yes
+                    </button>
                 </div>
             </div>
         </div>

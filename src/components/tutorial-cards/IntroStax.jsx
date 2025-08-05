@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import step2 from '../../lib/libraries/decks/steps/press-move-block.gif';
+import thumbnail from '../../lib/libraries/decks/steps/intro-stax-thumbnail.gif';
+import step2 from '../../lib/libraries/decks/steps/add-move-block.gif';
 import step3 from '../../lib/libraries/decks/steps/press-move-block.gif';
 import step4 from '../../lib/libraries/decks/steps/add-looks-block.gif';
 import step5 from '../../lib/libraries/decks/steps/press-looks-block.gif';
 import step6 from '../../lib/libraries/decks/steps/add-events-block.gif';
 import step7 from '../../lib/libraries/decks/steps/press-events-block.gif';
 import step8 from '../../lib/libraries/decks/steps/edit-looks-block.gif';
-import step9 from '../../lib/libraries/decks/steps/press-move-block.gif';
 
 const steps = [
     {
         id: 1,
-        text: 'Welcome To Stax! This is a tutorial for block coding',
-        gif: 'https://pybricks.com/misc/images/home-blocks.svg'
+        text: 'Welcome To Stax! This is a tutorial for block coding.',
+        gif: thumbnail
     },
     {
         id: 2,
@@ -41,17 +41,17 @@ const steps = [
     },
     {
         id: 7,
-        text: 'Press the blue flag block, and the sprite will play out the blocks.',
+        text: 'Press the blue flag, and the sprite will play out the blocks.',
         gif: step7
     },
     {
         id: 8,
-        text: 'Edit blocks to customize! (ex. edit looks block to make the sprite say \'Bye!\').',
+        text: 'Edit blocks to customize! For example, edit looks block to make the sprite say \'Bye!\'.',
         gif: step8
     },
     {
         id: 9,
-        text: 'Learn about Stax AI! Go to the AI Tab to learn more',
+        text: 'Introducing: Stax AI! Go to the AI Tutorials to learn more',
         isFinal: true
     }
 ];

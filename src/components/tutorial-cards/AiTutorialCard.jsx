@@ -30,16 +30,17 @@ const AiTutorialCard = ({ onClickCode, onClickQA, onBack }) => {
     alignItems: 'center',
     margin: '-24px -32px 16px -32px' // overlaps padding
 }}>
-            {/* Back button at bottom */}
+            {/* Back button */}
             <button onClick={onBack} style={{
-                backgroundColor: 'white',
-                color: '#b57bff',
+                backgroundColor: '#b57bff',
+                color: '#ffffffff',
                 border: 'none',
                 borderRadius: 8,
                 fontSize: 16,
-                cursor: 'pointer'
+                cursor: 'pointer',
+                
             }}>
-                Back
+                ←
             </button>
 
     <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -107,7 +108,7 @@ const AiTutorialCard = ({ onClickCode, onClickQA, onBack }) => {
                         width: 180
                     }}
                     >
-                        Generate a simple block code game using one prompt.
+                        Generate a simple block code game using a single prompt.
                     </div>
                 </div>
                 <div>

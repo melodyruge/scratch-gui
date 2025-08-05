@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import paintStep2 from '../gifs/improve-project-step2.gif';
 import paintStep3 from '../gifs/improve-project-step3.gif';
 import paintStep4 from '../gifs/improve-project-step4.gif';
-import paintStep5 from '../gifs/QA-paint-program-step5.gif';
-import paintStep6 from '../gifs/QA-paint-program-step6.gif';
-import paintStep7 from '../gifs/QA-paint-program-step7.gif';
 
 const steps = [
     {
@@ -14,7 +11,7 @@ const steps = [
     },
     {
         id: 2,
-        text: 'We are going ask Stax improve this project:',
+        text: 'We are going ask Stax AI to improve this project:',
         gif: paintStep2
     },
     {
@@ -24,12 +21,12 @@ const steps = [
     },
     {
         id: 4,
-        text: 'Improvments by StaxAI!',
+        text: 'Stax AI suggests how we can improve our project!',
         gif: paintStep4
     },
       {
         id: 5,
-        text: 'Try it yourself: Go to this project and ask Stax Q&A how to improve it:',
+        text: 'Try it yourself: Go to this project and ask Stax Q&A how to improve it.',
         code: 'https://stax.fun/editor?projectId=1023',
         gif: null
     }
@@ -174,63 +171,39 @@ const QAImproveProjectTutorial = ({ onBack, onExit}) => {
                 </button>
 
                 {/* Center Content */}
-                {step.code ? (
-<div style={{ width: '90%', position: 'relative' }}>
-    <textarea
-        value={step.code}
-        readOnly
-        style={{
-            width: '100%',
-            height: '100px',
-            padding: '10px',
-            fontSize: '14px',
-            fontFamily: 'monospace',
-            border: '1px solid #ccc',
-            borderRadius: '8px',
-            resize: 'none',
-            backgroundColor: '#f9f9f9'
-        }}
-        onFocus={e => e.target.select()}
-    />
-    <div style={{
-        display: 'flex',
-        justifyContent: 'flex-end',
-        marginTop: '8px'
-    }}>
-        <button
-            onClick={() => {
-                navigator.clipboard.writeText(step.code);
-                setCopied(true);
-                setTimeout(() => setCopied(false), 1500);
-            }}
+{step.code ? (
+    <div style={{ textAlign: 'center' }}>
+        <a
+            href={step.code}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-                padding: '6px 12px',
-                fontSize: 12,
+                display: 'inline-block',
+                padding: '10px 16px',
                 backgroundColor: '#b57bff',
                 color: 'white',
-                border: 'none',
-                borderRadius: 6,
-                cursor: 'pointer',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.2)'
+                borderRadius: '8px',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+                fontSize: '14px',
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
             }}
         >
-            {copied ? '✔ Copied!' : '📋 Copy'}
-        </button>
+            🔗 Open Project
+        </a>
     </div>
-</div>
+) : (
+    <img
+        src={step.gif}
+        alt={`Step ${step.id}`}
+        style={{
+            maxWidth: '90%',
+            maxHeight: '90%',
+            borderRadius: 8
+        }}
+    />
+)}
 
-
-                ) : (
-                    <img
-                        src={step.gif}
-                        alt={`Step ${step.id}`}
-                        style={{
-                            maxWidth: '90%',
-                            maxHeight: '90%',
-                            borderRadius: 8
-                        }}
-                    />
-                )}
 
                 {/* Right Arrow */}
                 <button

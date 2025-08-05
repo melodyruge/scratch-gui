@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import cookieStep2 from '../gifs/cookie-clicker-step2.gif';
-import cookieStep3 from '../gifs/cookie-clicker-step3.gif';
+import cookieStep2 from '../gifs/competitive-clicker-step2.gif';
+import cookieStep3 from '../gifs/competitive-clicker-step3.gif';
 
-import ghostStep6 from '../gifs/ghost-game-step6.gif';
+import ghostStep6 from '../gifs/publish-game.gif';
 
 const steps = [
     {
@@ -12,22 +12,22 @@ const steps = [
     },
     {
         id: 2,
-        text: 'The Code tab lets you use Stax Ai to generate simple code. Craft a simple prompt and hit send:',
+        text: 'The Code tab lets you use Stax AI to generate simple code. Craft a simple prompt and hit send:',
         gif: cookieStep2
     },
     {
         id: 3,
-        text: 'Once loaded, code blocks are in the workspace. Press the flag to play!',
+        text: 'Once loaded, code blocks are generated in the workspace. Press the flag to play!',
         gif: cookieStep3
     },
     {
       id: 4,
-      text: 'Share your first Stax game! On the top right, click the publish button, and save with your project name.',
+      text: 'Share your first Stax game! On the headbar, click save and name your project, then click publish for others to play.',
       gif: ghostStep6
     },
     {
       id: 5,
-      text: 'Try it yourself: Copy the Ghost prompt into your own Code Tab',
+      text: 'Try it yourself: Copy the prompt into your own Code Tab',
       code: 'Reset points and timer. Users have 10 seconds to click Sprite1 and gain points. Show points and timer. When Sprite1 is clicked, increase size by 10 for 0.1 seconds and gain a point. Every second, Sprite1 changes color. When game is over, Sprite1 says score.',
       gif: null
     }
