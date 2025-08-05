@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import thumbnail from '../../lib/libraries/decks/steps/intro-stax-thumbnail.gif';
-import step2 from '../../lib/libraries/decks/steps/add-move-block.gif';
-import step3 from '../../lib/libraries/decks/steps/press-move-block.gif';
-import step4 from '../../lib/libraries/decks/steps/add-looks-block.gif';
-import step5 from '../../lib/libraries/decks/steps/press-looks-block.gif';
-import step6 from '../../lib/libraries/decks/steps/add-events-block.gif';
-import step7 from '../../lib/libraries/decks/steps/press-events-block.gif';
-import step8 from '../../lib/libraries/decks/steps/edit-looks-block.gif';
+//../gifs/paint-program-step2.gif
+import thumbnail from '../gifs/stax-tutorial-thumbnail.gif';
+import step2 from '../gifs/stax-tutorial-step2.gif';
+import step3 from '../gifs/stax-tutorial-step3.gif';
+import step4 from '../gifs/stax-tutorial-step4.gif';
+import step5 from '../gifs/stax-tutorial-step5.gif';
+import step6 from '../gifs/stax-tutorial-step6.gif';
+import step7 from '../gifs/stax-tutorial-step7.gif';
+import step8 from '../gifs/stax-tutorial-step8.gif';
 
 const steps = [
     {
