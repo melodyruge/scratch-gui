@@ -31,17 +31,16 @@ const AiTutorialCard = ({ onClickCode, onClickQA, onBack }) => {
     margin: '-24px -32px 16px -32px' // overlaps padding
 }}>
             {/* Back button */}
-            <button onClick={onBack} style={{
-                backgroundColor: '#b57bff',
-                color: '#ffffffff',
-                border: 'none',
-                borderRadius: 8,
-                fontSize: 16,
-                cursor: 'pointer',
-                
-            }}>
-                ←
-            </button>
+                <button onClick={onBack} style={{
+                    backgroundColor: 'white',
+                    color: '#b57bff',
+                    border: 'none',
+                    borderRadius: 8,
+                    fontSize: 16,
+                    cursor: 'pointer'
+                }}>
+                    Back
+                </button>
 
     <div style={{ display: 'flex', alignItems: 'center' }}>
         <button
